@@ -27,7 +27,7 @@ public abstract class Score {
             }
             if (inARow == toCheck) {
                 if (exact) {
-                    if (i == values.length-1 || values[i] != values[i+2]) {
+                    if (i == values.length-2 || values[i] != values[i+2]) {
                         return true;
                     }
                 } else {
