@@ -1,6 +1,5 @@
 //template for game objects
 public class YahtzeeGame {
-    //private int score;
     private Score[] scorecard = new Score[13];
     private YahtzeeDice dice = new YahtzeeDice();
 
