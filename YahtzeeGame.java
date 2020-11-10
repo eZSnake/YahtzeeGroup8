@@ -60,6 +60,7 @@ public class YahtzeeGame {
             String save = TextIO.getlnString().toLowerCase();
             succSave = saveScore(save);
         }
+        System.out.print("Your score is " + getCurrentScore(scorecard));
         System.out.println("\nNext Turn\n");
     }
 
@@ -164,5 +165,13 @@ public class YahtzeeGame {
                 }
                 return false;
         }
+    }
+    
+    private int getCurrentScore(Score[] scorecard) {
+        int sum = 0;
+        for (int i = 0; i < 13; i++) {
+            sum += scorecard[i].getActualScore();
+        }
+        return sum;
     }
 }
