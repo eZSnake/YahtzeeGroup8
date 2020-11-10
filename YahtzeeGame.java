@@ -22,8 +22,8 @@ public class YahtzeeGame {
     public void playRound() {
         int turn = 3;
         boolean rollAgain = true;
-        for (int r = 0; r < 5; r++) {
-            dice.unhold(r);
+        for (int i = 0; i < 5; i++) {
+            dice.unhold(i);
         }
         System.out.println("You have a maximum of 3 rolls per round.");
         while (rollAgain && turn > 0) {
