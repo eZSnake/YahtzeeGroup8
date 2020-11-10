@@ -56,7 +56,7 @@ public class YahtzeeGame {
         printScoreCard();
         boolean succSave = false;
         while (!succSave) {
-            System.out.print("Which score would you like to save? (enter name): ");
+            System.out.print("Which score would you like to save? (enter name or number): ");
             String save = TextIO.getlnString().toLowerCase();
             succSave = saveScore(save);
         }
@@ -67,7 +67,7 @@ public class YahtzeeGame {
     public void printScoreCard() {
         System.out.printf("%-25s%-25s%-25s\n", "Score Type", "Potential Score", "Score");
         for (int i = 0; i < scorecard.length; i++) {
-            System.out.printf("%d. %-25s%-25d%-25d\n", (i+1), scorecard[i].getName(), scorecard[i].getPotentialScore(), scorecard[i].getActualScore());
+            System.out.printf("%3d. %-25s%-25d%-25d\n", (i+1), scorecard[i].getName(), scorecard[i].getPotentialScore(), scorecard[i].getActualScore());
         }
     }
 
