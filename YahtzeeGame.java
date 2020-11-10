@@ -67,104 +67,102 @@ public class YahtzeeGame {
     public void printScoreCard() {
         System.out.printf("%-25s%-25s%-25s\n", "Score Type", "Potential Score", "Score");
         for (int i = 0; i < scorecard.length; i++) {
-            System.out.printf("%-25s%-25d%-25d\n", scorecard[i].getName(), scorecard[i].getPotentialScore(), scorecard[i].getActualScore());
+            System.out.printf("%d. %-25s%-25d%-25d\n", (i+1), scorecard[i].getName(), scorecard[i].getPotentialScore(), scorecard[i].getActualScore());
         }
     }
 
     public boolean saveScore(String save) {
-        switch(save) {
-            case "ones":
-                if (!scorecard[0].getIsUsed()) {
-                    scorecard[0].setActualScore(scorecard[0].calculateScore(dice.getDiceValues()));
-                    scorecard[0].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "twos":
-                if (!scorecard[1].getIsUsed()) {
-                    scorecard[1].setActualScore(scorecard[1].calculateScore(dice.getDiceValues()));
-                    scorecard[1].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "threes":
-                if (!scorecard[2].getIsUsed()) {
-                    scorecard[2].setActualScore(scorecard[2].calculateScore(dice.getDiceValues()));
-                    scorecard[2].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "fours":
-                if (!scorecard[3].getIsUsed()) {
-                    scorecard[3].setActualScore(scorecard[3].calculateScore(dice.getDiceValues()));
-                    scorecard[3].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "fives":
-                if (!scorecard[4].getIsUsed()) {
-                    scorecard[4].setActualScore(scorecard[4].calculateScore(dice.getDiceValues()));
-                    scorecard[4].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "sixes":
-                if (!scorecard[5].getIsUsed()) {
-                    scorecard[5].setActualScore(scorecard[5].calculateScore(dice.getDiceValues()));
-                    scorecard[5].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "three of a kind":
-                if (!scorecard[6].getIsUsed()) {
-                    scorecard[6].setActualScore(scorecard[6].calculateScore(dice.getDiceValues()));
-                    scorecard[6].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "four of a kind":
-                if (!scorecard[7].getIsUsed()) {
-                    scorecard[7].setActualScore(scorecard[7].calculateScore(dice.getDiceValues()));
-                    scorecard[7].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "full house":
-                if (!scorecard[8].getIsUsed()) {
-                    scorecard[8].setActualScore(scorecard[8].calculateScore(dice.getDiceValues()));
-                    scorecard[8].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "small straight":
-                if (!scorecard[9].getIsUsed()) {
-                    scorecard[9].setActualScore(scorecard[9].calculateScore(dice.getDiceValues()));
-                    scorecard[9].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "large straight":
-                if (!scorecard[10].getIsUsed()) {
-                    scorecard[10].setActualScore(scorecard[10].calculateScore(dice.getDiceValues()));
-                    scorecard[10].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            case "yahtzee":
-                if (!scorecard[11].getIsUsed()) {
-                    scorecard[11].setActualScore(scorecard[11].calculateScore(dice.getDiceValues()));
-                    scorecard[11].setIsUsed(true);
-                    return true;
-                }
-                return false;
-            default:
-                if (!scorecard[12].getIsUsed()) {
-                    scorecard[12].setActualScore(scorecard[12].calculateScore(dice.getDiceValues()));
-                    scorecard[12].setIsUsed(true);
-                    return true;
-                }
-                return false;
+        if ("ones".equals(save) || "1".equals(save)) {
+            if (!scorecard[0].getIsUsed()) {
+                scorecard[0].setActualScore(scorecard[0].calculateScore(dice.getDiceValues()));
+                scorecard[0].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("twos".equals(save) || "2".equals(save)) {
+            if (!scorecard[1].getIsUsed()) {
+                scorecard[1].setActualScore(scorecard[1].calculateScore(dice.getDiceValues()));
+                scorecard[1].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("threes".equals(save) || "3".equals(save)) {
+            if (!scorecard[2].getIsUsed()) {
+                scorecard[2].setActualScore(scorecard[2].calculateScore(dice.getDiceValues()));
+                scorecard[2].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("fours".equals(save) || "4".equals(save)) {
+            if (!scorecard[3].getIsUsed()) {
+                scorecard[3].setActualScore(scorecard[3].calculateScore(dice.getDiceValues()));
+                scorecard[3].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("fives".equals(save) || "5".equals(save)) {
+            if (!scorecard[4].getIsUsed()) {
+                scorecard[4].setActualScore(scorecard[4].calculateScore(dice.getDiceValues()));
+                scorecard[4].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("sixes".equals(save) || "6".equals(save)) {
+            if (!scorecard[5].getIsUsed()) {
+                scorecard[5].setActualScore(scorecard[5].calculateScore(dice.getDiceValues()));
+                scorecard[5].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("three of a kind".equals(save) || "7".equals(save)) {
+            if (!scorecard[6].getIsUsed()) {
+                scorecard[6].setActualScore(scorecard[6].calculateScore(dice.getDiceValues()));
+                scorecard[6].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("four of a kind".equals(save) || "8".equals(save)) {
+            if (!scorecard[7].getIsUsed()) {
+                scorecard[7].setActualScore(scorecard[7].calculateScore(dice.getDiceValues()));
+                scorecard[7].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("full house".equals(save) || "9".equals(save)) {
+            if (!scorecard[8].getIsUsed()) {
+                scorecard[8].setActualScore(scorecard[8].calculateScore(dice.getDiceValues()));
+                scorecard[8].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("small straight".equals(save)) {
+            if (!scorecard[9].getIsUsed() || "10".equals(save)) {
+                scorecard[9].setActualScore(scorecard[9].calculateScore(dice.getDiceValues()));
+                scorecard[9].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("large straight".equals(save)) {
+            if (!scorecard[10].getIsUsed() || "11".equals(save)) {
+                scorecard[10].setActualScore(scorecard[10].calculateScore(dice.getDiceValues()));
+                scorecard[10].setIsUsed(true);
+                return true;
+            }
+            return false;
+        } else if ("yahtzee".equals(save) || "12".equals(save)) {
+            if (!scorecard[11].getIsUsed()) {
+                scorecard[11].setActualScore(scorecard[11].calculateScore(dice.getDiceValues()));
+                scorecard[11].setIsUsed(true);
+                return true;
+            }
+            return false;
         }
+        if (!scorecard[12].getIsUsed()) {
+            scorecard[12].setActualScore(scorecard[12].calculateScore(dice.getDiceValues()));
+            scorecard[12].setIsUsed(true);
+            return true;
+        }
+        return false;
     }
     
     private int getCurrentScore(Score[] scorecard) {
