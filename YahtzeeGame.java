@@ -135,15 +135,15 @@ public class YahtzeeGame {
                 return true;
             }
             return false;
-        } else if ("small straight".equals(save)) {
-            if (!scorecard[9].getIsUsed() || "10".equals(save)) {
+        } else if ("small straight".equals(save) || "10".equals(save)) {
+            if (!scorecard[9].getIsUsed()) {
                 scorecard[9].setActualScore(scorecard[9].calculateScore(dice.getDiceValues()));
                 scorecard[9].setIsUsed(true);
                 return true;
             }
             return false;
-        } else if ("large straight".equals(save)) {
-            if (!scorecard[10].getIsUsed() || "11".equals(save)) {
+        } else if ("large straight".equals(save) || "11".equals(save)) {
+            if (!scorecard[10].getIsUsed()) {
                 scorecard[10].setActualScore(scorecard[10].calculateScore(dice.getDiceValues()));
                 scorecard[10].setIsUsed(true);
                 return true;
