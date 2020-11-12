@@ -64,14 +64,14 @@ public class YahtzeeGame {
         System.out.println("\nNext Turn\n");
     }
 
-    public void printScoreCard() {
+    private void printScoreCard() {
         System.out.printf("%-25s%-25s%-25s\n", "Score Type", "Potential Score", "Score");
         for (int i = 0; i < scorecard.length; i++) {
             System.out.printf("%3d. %-25s%-25d%-25d\n", (i+1), scorecard[i].getName(), scorecard[i].getPotentialScore(), scorecard[i].getActualScore());
         }
     }
 
-    public boolean saveScore(String save) {
+    private boolean saveScore(String save) {
         if ("ones".equals(save) || "1".equals(save)) {
             if (!scorecard[0].getIsUsed()) {
                 scorecard[0].setActualScore(scorecard[0].calculateScore(dice.getDiceValues()));
@@ -171,5 +171,9 @@ public class YahtzeeGame {
             sum += scorecard[i].getActualScore();
         }
         return sum;
+    }
+    
+    public String printScore() {
+        return "Your final score is " + getCurrentScore(scorecard) + ".";
     }
 }
