@@ -4,5 +4,6 @@ public class YahtzeeRunner {
         for (int i = 0; i < 13; i++) {
             myGame.playRound();
         }
+        System.out.print(myGame.printScore());
     }
 }
