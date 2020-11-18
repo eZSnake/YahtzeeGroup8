@@ -156,11 +156,12 @@ public class YahtzeeGame {
                 return true;
             }
             return false;
-        }
-        if (!scorecard[12].getIsUsed()) {
-            scorecard[12].setActualScore(scorecard[12].calculateScore(dice.getDiceValues()));
-            scorecard[12].setIsUsed(true);
-            return true;
+        } else if ("chance".equals(save) || "13".equals(save)) {
+            if (!scorecard[12].getIsUsed()) {
+                scorecard[12].setActualScore(scorecard[12].calculateScore(dice.getDiceValues()));
+                scorecard[12].setIsUsed(true);
+                return true;
+            }
         }
         return false;
     }
